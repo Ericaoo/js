@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Multas</title>
+</head>
+<body>
+    <h1>Sistema de Multas Estadual</h1>
+    Velocidade do veículo: <input type="number" name="txtvel" id="vel" min="0">Km/h
+    <input type="button" value="Verificar" onclick="verif()">
+    <p id="res"></p>
+
+    <script>
+        function verif() {
+            var val = document.getElementById('vel').value;
+            if (val.trim() === '') {
+                document.getElementById('res').textContent = 'Informe a velocidade';
+                return;
+            }
+            var vel = Number(val);
+            var msg;
+            if (vel > 60) {
+                msg = `Você ultrapassou o limite de velocidade em ${vel - 60} Km/h. Multado.`;
+            } else {
+                msg = `Velocidade de ${vel} Km/h dentro do limite permitido. Dirija com segurança!`;
+            }
+            document.getElementById('res').textContent = msg;
+        }
+    </script>
+</body>
+</html>

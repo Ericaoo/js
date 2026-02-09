@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex estrangeiro</title>
+</head>
+<body>
+    <h1>Exercício sobre estrangeiros.</h1>
+
+    <h2>De que país você é?</h2>
+    <input type="text" id="txtNome">
+    <input type="button" value="Verificar" onclick="verif()">
+    <div id="res"></div>
+
+    <script>
+        function verif() {
+            var nome = document.getElementById('txtNome').value
+            var res = document.getElementById('res')
+            if (nome.toLowerCase() == 'brasil') { res.innerHTML = `<p>Você é brasileiro!</p>`
+            }   else {
+                res.innerHTML = `<p>Você é estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
